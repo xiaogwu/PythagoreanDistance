@@ -60,13 +60,17 @@ public class PythagoreanDistance {
      */
 
     public static void printMatrix(double[][] matrix) {
+        int asterisks = 0;
         for (int r = 0; r < matrix.length; r++) {
             for (int c = 0; c < matrix[r].length; c++) {
                 //System.out.printf("%.1f  ", matrix[r][c]);
 
                 // Print matrix based on distance from origin
                 if (matrix[r][c] == 0.0) System.out.printf("@");
-                else if (matrix[r][c] >= 9.0 && matrix[r][c] <= 10.5) System.out.printf("*");
+                else if (matrix[r][c] >= 9.0 && matrix[r][c] <= 10.5) {
+                    System.out.printf("*");
+                    asterisks++;
+                }
                 else if (matrix[r][c] > 10.5 && matrix[r][c] <= 12.5) System.out.printf(".");
                 else if (matrix[r][c] > 12.5 && matrix[r][c] <= 14.5) System.out.printf("-");
                 else if (matrix[r][c] > 14.5 && matrix[r][c] <= 16.5) System.out.printf("+");
@@ -77,5 +81,6 @@ public class PythagoreanDistance {
             }
             System.out.println(); //Print new line for each row
         }
+        System.out.println("Number of asterisks: " + asterisks);
     }
 }
